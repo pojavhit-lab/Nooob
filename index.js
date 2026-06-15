@@ -1,24 +1,23 @@
-const mineflayer = require('mineflayer');
+const mineflayer = require('mineflayer')
 
 function createBot() {
   const bot = mineflayer.createBot({
     host: 'pojaverscore.falix.gg',
     port: 43223,
-    username: 'AFKBot'
-  });
+    username: 'AFK_Player',
+    version: '1.21.1'
+  })
 
   bot.on('spawn', () => {
-    console.log('Bot joined!');
-  });
+    console.log('Bot joined!')
+  })
 
   bot.on('end', () => {
-    console.log('Disconnected, reconnecting...');
-    setTimeout(createBot, 5000);
-  });
+    console.log('Disconnected, reconnecting...')
+    setTimeout(createBot, 5000)
+  })
 
-  bot.on('error', (err) => {
-    console.log(err);
-  });
+  bot.on('error', console.log)
 }
 
-createBot();
+createBot()
