@@ -10,11 +10,6 @@ const bot = mineflayer.createBot({
 bot.on('spawn', () => {
   console.log('Bot joined!')
 
-  // Register
-  setTimeout(() => {
-    bot.chat('/register 4674877 4674877')
-  }, 3000)
-
   // Login
   setTimeout(() => {
     bot.chat('/login 4674877')
