@@ -11,7 +11,7 @@ bot.on('spawn', () => {
   console.log('Bot joined!')
 
   setTimeout(() => {
-    bot.chat('/login Password5758947')
+    bot.chat('/login 5758947')
   }, 5000)
 })
 
