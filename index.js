@@ -3,7 +3,7 @@ const mineflayer = require('mineflayer')
 const bot = mineflayer.createBot({
   host: 'pojaverscore.falix.gg',
   port: 43223,
-  username: 'AFK_Player',
+  username:'PojaverAFK',
   version: '1.21.1'
 })
 
