@@ -2,8 +2,8 @@ const mineflayer = require('mineflayer');
 
 function createBot() {
   const bot = mineflayer.createBot({
-    host: 'YOUR_SERVER_IP',
-    port: 25565,
+    host: 'pojaverscore.falix.gg',
+    port: 43223,
     username: 'AFKBot'
   });
 
@@ -16,7 +16,9 @@ function createBot() {
     setTimeout(createBot, 5000);
   });
 
-  bot.on('error', err => console.log(err));
+  bot.on('error', (err) => {
+    console.log(err);
+  });
 }
 
 createBot();
