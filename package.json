@@ -1,8 +1,16 @@
 {
-  "name": "afkbot",
+  "name": "minecraft-afk-bot",
   "version": "1.0.0",
+  "description": "Mineflayer AFK Bot",
   "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
-    "mineflayer": "^4.20.1"
+    "express": "^4.21.2",
+    "mineflayer": "^4.33.0"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
