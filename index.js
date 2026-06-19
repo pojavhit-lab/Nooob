@@ -2,25 +2,19 @@ const mineflayer = require('mineflayer')
 
 const bot = mineflayer.createBot({
   host: 'pojaverscore.falix.gg',
-  port: 43223,
-  username: 'PojaverAFFFFfK',
-  version: '1.21.1'
+  port: 25565,
+  username: 'AFK KING5U'
 })
 
 bot.on('spawn', () => {
-  console.log('Bot joined!')
-
-  // Login
-  setTimeout(() => {
-    bot.chat('/login 4674877')
-  }, 7000)
+  console.log('Bot joined server')
+  bot.chat('AFK bot online!')
 })
 
-bot.on('error', console.log)
-bot.on('kicked', console.log)
-
-const http = require('http')
-
-http.createServer((req, res) => {
-  res.end('Bot Online')
-}).listen(process.env.PORT || 3000)
+// auto reconnect
+bot.on('end', () => {
+  console.log('Disconnected, reconnecting...')
+  setTimeout(() => {
+    process.exit(1)
+  }, 5000)
+})
