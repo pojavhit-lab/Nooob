@@ -1,20 +1,32 @@
-const mineflayer = require('mineflayer')
+const express = require("express");
+const app = express();
 
-const bot = mineflayer.createBot({
-  host: 'pojaverscore.falix.gg',
-  port: 24439,
-  username: 'AFK KING5U'
-})
+app.use(express.json());
 
-bot.on('spawn', () => {
-  console.log('Bot joined server')
-  bot.chat('AFK bot online!')
-})
+// Home page
+app.get("/", (req, res) => {
+  res.send("Auth Reloaded System Online ✔️");
+});
 
-// auto reconnect
-bot.on('end', () => {
-  console.log('Disconnected, reconnecting...')
-  setTimeout(() => {
-    process.exit(1)
-  }, 5000)
-})
+// Login API
+app.post("/login", (req, res) => {
+  const { username, password } = req.body;
+
+  if (username === "admin" && password === "1234") {
+    return res.json({
+      status: "success",
+      token: "AUTH-RELOADED-KEY-999"
+    });
+  }
+
+  return res.json({
+    status: "failed",
+    msg: "Invalid login"
+  });
+});
+
+// Keep alive server (IMPORTANT for 24/7 trick)
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log("Auth Reloaded running...");
+});
